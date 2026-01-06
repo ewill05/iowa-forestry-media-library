@@ -5,31 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iowa Forestry Media Library</title>
     <link rel="icon" type="image/png" href="logo.png">
+
     <meta name="description" content="Open-access archive of high-resolution dendrology and forestry media for research and education. Featuring 4K+ scans of Iowa tree species.">
     <meta name="keywords" content="forestry, dendrology, Iowa State University, tree identification, plant science, botany, high-resolution scans, open access, IFML">
     <meta name="author" content="Iowa Forestry Media Library">
-    
     <meta property="og:title" content="Iowa Forestry Media Library">
     <meta property="og:description" content="The digital home for high-fidelity forestry media and dendrology scans. Open access for students and researchers.">
     <meta property="og:image" content="https://iowaforestrymedialibrary.org/logo.png">
     <meta property="og:url" content="https://iowaforestrymedialibrary.org">
     <meta property="og:type" content="website">
+
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; text-align: center; margin: 0; padding: 0; background-color: #f4f4f9; color: #333; }
         
-        /* Navigation Bar Styles */
+        /* Navigation Bar */
         .nav-bar { background-color: #2c3e50; padding: 10px 20px; display: flex; align-items: center; justify-content: center; }
-        /* NEW: Logo styling to keep it small and aligned */
         .logo { height: 60px; margin-right: 20px; width: auto; }
         .nav-bar a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em; }
         .nav-bar a:hover { text-decoration: underline; color: #a8d5e2; }
         
-        /* Main Content Styles */
-        .container { max-width: 600px; margin: 60px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; }
-        p { line-height: 1.6; }
-        .btn { display: inline-block; background-color: #005f73; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+        /* Main Layout */
+        .container { max-width: 800px; margin: 40px auto; padding: 20px; }
+        
+        /* Hero Text */
+        .hero { margin-bottom: 40px; }
+        h1 { color: #2c3e50; font-size: 2.5em; margin-bottom: 10px; }
+        .subtitle { font-size: 1.2em; color: #555; max-width: 600px; margin: 0 auto 30px auto; }
+        
+        /* Specimen Card Styling */
+        .specimen-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tag {
+            background-color: #e0fbfc;
+            color: #005f73;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .specimen-img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #eee;
+        }
+
+        .caption {
+            margin-top: 15px;
+            font-style: italic;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Button Styling */
+        .btn { display: inline-block; background-color: #005f73; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1em; transition: background 0.3s; }
         .btn:hover { background-color: #0a9396; }
+        
         .footer { margin-top: 50px; font-size: 0.9em; color: #666; padding-bottom: 20px; }
     </style>
 </head>
@@ -37,18 +82,26 @@
 
     <div class="nav-bar">
         <img src="logo.png" alt="IFML Logo" class="logo">
-        
         <a href="index.html">Home</a>
         <a href="about.html">About the Library</a>
     </div>
 
     <div class="container">
-        <h1>Iowa Forestry Media Library</h1>
-        <p><strong>Status:</strong> Data Ingest Active</p>
-        <p>Welcome to the digital home of the IFML. We are preserving high-resolution scans of the Iowa dendrology collection.</p>
-        <p>The collection is hosted openly on Zenodo for research and educational use.</p>
         
+        <div class="hero">
+            <h1>Iowa Forestry Media Library</h1>
+            <p class="subtitle">Preserving the Iowa State University dendrology collection through open-access, high-fidelity digital imaging.</p>
+        </div>
+
+        <div class="specimen-card">
+            <span class="tag">Featured Specimen</span>
+            <img src="preview-oak.jpg" alt="Quercus bicolor scan preview" class="specimen-img">
+            <p class="caption">Fig 1. Swamp White Oak (<em>Quercus bicolor</em>) - Foliage and twig detail.</p>
+        </div>
+
+        <p><strong>Status:</strong> Data Ingest Active</p>
         <a href="https://zenodo.org/communities/ifml-archive" class="btn">View Archive Collection</a>
+        
     </div>
 
     <div class="footer">
@@ -57,5 +110,3 @@
 
 </body>
 </html>
-
-
