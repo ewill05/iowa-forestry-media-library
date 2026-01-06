@@ -29,6 +29,20 @@
         h2 { color: #0a9396; margin-top: 30px; }
         .contact-box { background-color: #e0fbfc; padding: 20px; border-radius: 5px; margin-top: 30px; border-left: 5px solid #005f73; }
         .footer { text-align: center; margin-top: 50px; font-size: 0.9em; color: #666; padding-bottom: 20px; }
+        /* MOBILE TWEAKS (Add this to the bottom of your style section) */
+        @media (max-width: 600px) {
+            /* 1. Stack the menu vertically so it's easier to tap */
+            .nav-bar { flex-direction: column; padding: 20px 10px; }
+            .nav-bar a { margin: 10px 0; display: block; font-size: 1.2em; }
+            .logo { margin-right: 0; margin-bottom: 10px; }
+
+            /* 2. Shrink the white box margins so it fits the screen */
+            .container { margin: 10px; padding: 20px; width: auto; }
+            h1 { font-size: 1.8em; }
+
+            /* 3. Make the spreadsheet scroll sideways instead of breaking */
+            .sheet-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        }
     </style>
 </head>
 <body>
