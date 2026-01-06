@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods & Protocols - Iowa Forestry Media Library</title>
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <meta name="description" content="Detailed scanning methodology and protocols for the Iowa Forestry Media Library high-resolution dendrology digitization project.">
+    <meta property="og:title" content="Methods & Protocols - IFML">
+    <meta property="og:description" content="Scientific protocols for reproducible high-fidelity botanical specimen digitization.">
+    <meta property="og:image" content="https://iowaforestrymedialibrary.org/logo.png">
+    <meta property="og:url" content="https://iowaforestrymedialibrary.org/methods.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://iowaforestrymedialibrary.org/logo.png">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f0e5 100%);
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            height: 65px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 5px;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            font-weight: 600;
+            font-size: 1.05em;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-bar a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .nav-bar a.active {
+            background: #005f73;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 50px 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.8em;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2c3e50 0%, #005f73 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            color: #005f73;
+            font-size: 1.9em;
+            margin: 40px 0 20px 0;
+            font-weight: 600;
+            border-left: 5px solid #0a9396;
+            padding-left: 20px;
+        }
+
+        h3 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin: 30px 0 15px 0;
+            font-weight: 600;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Spec Box */
+        .spec-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #f0f9ff 100%);
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 5px solid #0a9396;
+            box-shadow: 0 5px 15px rgba(0,95,115,0.08);
+        }
+
+        .spec-box p {
+            margin-bottom: 12px;
+        }
+
+        .spec-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .spec-box strong {
+            color: #005f73;
+            font-weight: 700;
+        }
+
+        /* Protocol Steps */
+        .protocol-steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+
+        .protocol-steps li {
+            counter-increment: step-counter;
+            padding: 20px 20px 20px 70px;
+            margin: 20px 0;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 10px;
+            position: relative;
+            border-left: 4px solid #0a9396;
+        }
+
+        .protocol-steps li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background: linear-gradient(135deg, #005f73 0%, #0a9396 100%);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* Equipment Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: linear-gradient(135deg, #005f73 0%, #0a9396 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e8f0e5;
+            color: #555;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        /* Best Practice Box */
+        .best-practice {
+            background: linear-gradient(135deg, #e0fbfc 0%, #c7ecee 100%);
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 3px solid #94d2bd;
+        }
+
+        .best-practice h3 {
+            margin-top: 0;
+            color: #005f73;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .best-practice ul {
+            margin: 15px 0 0 0;
+            padding-left: 25px;
+        }
+
+        .best-practice li {
+            margin: 10px 0;
+            color: #2c3e50;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin: 60px auto 0;
+            padding: 40px 30px;
+            font-size: 0.95em;
+            color: #666;
+            max-width: 1000px;
+            background: white;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+        }
+
+        .footer img {
+            transition: transform 0.3s ease;
+        }
+
+        .footer img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 15px 20px;
+                gap: 15px;
+            }
+
+            .logo-section {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                gap: 8px;
+            }
+
+            .nav-bar a {
+                display: block;
+                text-align: center;
+                padding: 14px;
+                font-size: 1.1em;
+            }
+
+            .container {
+                margin: 20px 15px;
+                padding: 30px 25px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            .protocol-steps li {
+                padding: 20px 20px 20px 60px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="logo.png" alt="IFML Logo" class="logo">
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="collection.html">Collection Status</a>
+                <a href="software.html">Software</a>
+                <a href="methods.html" class="active">Methods</a>
+                <a href="publications.html">Publications</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Methods & Protocols</h1>
+
+        <p>The Iowa Forestry Media Library follows standardized digitization protocols to ensure reproducibility, archival quality, and scientific rigor across all specimens.</p>
+
+        <h2>Equipment & Technical Specifications</h2>
+
+        <table>
+            <tr>
+                <th>Component</th>
+                <th>Specification</th>
+            </tr>
+            <tr>
+                <td><strong>Scanner</strong></td>
+                <td>Flatbed scanner with CCD sensor (minimum A4 scan area)</td>
+            </tr>
+            <tr>
+                <td><strong>Resolution</strong></td>
+                <td>1200 DPI optical (50+ megapixels per 6" specimen)</td>
+            </tr>
+            <tr>
+                <td><strong>Color Depth</strong></td>
+                <td>48-bit (16-bit per RGB channel)</td>
+            </tr>
+            <tr>
+                <td><strong>Color Space</strong></td>
+                <td>Adobe RGB (1998) with embedded ICC profile</td>
+            </tr>
+            <tr>
+                <td><strong>File Format</strong></td>
+                <td>Uncompressed TIFF (archival master)</td>
+            </tr>
+            <tr>
+                <td><strong>Preview Format</strong></td>
+                <td>PNG with sRGB color space (web display)</td>
+            </tr>
+            <tr>
+                <td><strong>Calibration</strong></td>
+                <td>ColorChecker Passport targets (monthly verification)</td>
+            </tr>
+        </table>
+
+        <h2>Specimen Preparation</h2>
+
+        <div class="spec-box">
+            <p><strong>Collection Guidelines:</strong></p>
+            <p><strong>Timing:</strong> Specimens collected at phenological maturity (leaves: mid-summer; fruit: peak ripeness)</p>
+            <p><strong>Selection:</strong> Disease-free, representative morphology, no insect damage</p>
+            <p><strong>Handling:</strong> Transport in sealed bags to prevent wilting</p>
+            <p><strong>Pressing:</strong> Flattened under weighted glass for 24-48 hours before scanning</p>
+            <p><strong>Drying:</strong> Specimens must be completely dry to prevent mold during storage</p>
+        </div>
+
+        <h2>Scanning Protocol</h2>
+
+        <ol class="protocol-steps">
+            <li>
+                <strong>Pre-Scan Calibration</strong><br>
+                Verify scanner warm-up time (minimum 30 minutes). Perform color calibration check using ColorChecker target. Document ambient temperature and humidity.
+            </li>
+            <li>
+                <strong>Specimen Positioning</strong><br>
+                Place specimen on scanner bed with adaxial (upper) surface facing down. Include metric ruler or scale bar in frame. Ensure specimen lies completely flat with no curled edges.
+            </li>
+            <li>
+                <strong>Scanner Settings Configuration</strong><br>
+                Set resolution to 1200 DPI optical (no interpolation). Select 48-bit color depth. Disable automatic color correction and sharpening. Set output color space to Adobe RGB.
+            </li>
+            <li>
+                <strong>Initial Scan Execution</strong><br>
+                Perform full-resolution scan. Save as uncompressed TIFF with embedded color profile. Generate MD5 checksum immediately after saving.
+            </li>
+            <li>
+                <strong>Quality Control Inspection</strong><br>
+                Verify image sharpness at 100% zoom. Check for dust, artifacts, or color casts. Confirm scale bar is readable and in-focus. Re-scan if quality issues detected.
+            </li>
+            <li>
+                <strong>Metadata Documentation</strong><br>
+                Record: Species (scientific and common names), collection date, location (GPS coordinates), collector name, phenological stage, specimen dimensions, pixels-per-millimeter calculation.
+            </li>
+            <li>
+                <strong>Web Preview Generation</strong><br>
+                Convert TIFF to PNG at 1200 DPI for web display. Apply sRGB color space conversion. Compress PNG with lossless optimization. Maintain original aspect ratio.
+            </li>
+            <li>
+                <strong>File Organization</strong><br>
+                Use naming convention: <code>[Genus]_[species]_[SpecimenType]_[YYYYMMDD]_[UniqueID].tif</code><br>
+                Example: <code>Quercus_bicolor_Leaf_20260106_001.tif</code>
+            </li>
+        </ol>
+
+        <h2>Scale Verification & Morphometrics</h2>
+
+        <div class="spec-box">
+            <p><strong>Pixels-per-Millimeter Calculation:</strong></p>
+            <p>At 1200 DPI: 1200 pixels ÷ 25.4 mm/inch = <strong>47.24 pixels/mm</strong></p>
+            <p><strong>Verification Method:</strong> Measure known dimension (e.g., 50mm ruler segment) in image editor. Actual pixel count should match theoretical value within ±2%.</p>
+            <p><strong>Use Cases:</strong> Enables precise leaf area calculation, sinus depth measurement, vein angle analysis, and petiole length documentation.</p>
+        </div>
+
+        <h2>Archival Storage & Zenodo Upload</h2>
+
+        <ol class="protocol-steps">
+            <li>
+                <strong>Pre-Upload Validation</strong><br>
+                Run TIFF Validator to confirm: 48-bit depth, uncompressed format, embedded color profile, minimum 1200 DPI, file integrity via checksum.
+            </li>
+            <li>
+                <strong>Metadata JSON Creation</strong><br>
+                Generate standardized JSON file with Dublin Core fields: Title, Creator, Subject (species), Description, Date, Type (Dataset/Image), Format (image/tiff), Rights (CC BY 4.0).
+            </li>
+            <li>
+                <strong>Zenodo Community Upload</strong><br>
+                Upload to IFML Archive community. Include both TIFF (master) and PNG (preview). Attach metadata JSON. Assign keywords: "Forestry", "Iowa", "Dendrology", scientific name.
+            </li>
+            <li>
+                <strong>DOI Assignment & Verification</strong><br>
+                Publish record to receive permanent DOI. Verify DOI resolves correctly. Update collection tracking spreadsheet with status: "Published".
+            </li>
+        </ol>
+
+        <div class="best-practice">
+            <h3>🔬 Best Practices & Quality Tips</h3>
+            <ul>
+                <li><strong>Dust Control:</strong> Clean scanner glass with microfiber cloth before each session. Use compressed air for specimen removal.</li>
+                <li><strong>Color Consistency:</strong> Scan all specimens from a single species on the same day when possible to minimize lighting variations.</li>
+                <li><strong>Backup Strategy:</strong> Maintain three copies: local working drive, external archive drive, Zenodo (cloud).</li>
+                <li><strong>Version Control:</strong> Never overwrite original TIFF files. Create dated copies for any post-processing.</li>
+                <li><strong>Batch Efficiency:</strong> Group similar specimens (e.g., all oak leaves) to streamline metadata entry.</li>
+                <li><strong>Temperature Stability:</strong> Avoid scanning in direct sunlight or near HVAC vents that cause temperature fluctuations.</li>
+            </ul>
+        </div>
+
+        <h2>Citation of Methodology</h2>
+
+        <p>Researchers using these protocols should cite as follows:</p>
+
+        <div class="spec-box">
+            <p style="font-style: italic;">
+                Iowa Forestry Media Library. (2026). Digitization Methods and Protocols for High-Resolution Dendrology Specimens. Retrieved from https://iowaforestrymedialibrary.org/methods.html
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+            <img alt="Creative Commons License" style="border-width:0; margin-bottom:5px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
+        </a>
+        <br>
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+        <br>
+        &copy; 2026 Iowa Forestry Media Library.
+    </div>
+</body>
+</html>
