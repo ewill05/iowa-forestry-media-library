@@ -9,164 +9,35 @@
     <meta name="description" content="Live tracking of the Iowa Forestry Media Library digitization pipeline.">
     <meta property="og:title" content="Collection Status - IFML">
     <meta property="og:description" content="View the real-time status of our dendrology scanning queue.">
-    <meta property="og:image" content="https://iowaforestrymedialibrary.org/logo.png">
-    <meta property="og:url" content="https://iowaforestrymedialibrary.org/collection.html">
+    <meta property="og:title" content="Iowa Forestry Media Library">
+    <meta property="og:description" content="An open-access archive of high-resolution dendrology scans for research and education.">
+    <meta property="og:image" content="https://[YOUR-GITHUB-USERNAME].github.io/[YOUR-REPO-NAME]/logo.png">
+    <meta property="og:url" content="https://[YOUR-GITHUB-USERNAME].github.io/[YOUR-REPO-NAME]/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="https://iowaforestrymedialibrary.org/logo.png">
-
+    <meta name="twitter:image" content="https://[YOUR-GITHUB-USERNAME].github.io/[YOUR-REPO-NAME]/logo.png">
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8f0e5 100%);
-            color: #333;
-            line-height: 1.7;
-        }
-
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f9; }
+        
         /* Navigation Bar */
-        .nav-bar {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            padding: 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        .nav-bar { background-color: #2c3e50; padding: 10px 20px; display: flex; align-items: center; justify-content: center; }
+        .logo { height: 60px; margin-right: 20px; width: auto; }
+        .nav-bar a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em; }
+        .nav-bar a:hover { text-decoration: underline; color: #a8d5e2; }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 30px;
-        }
+        /* Main Container */
+        .container { max-width: 1000px; margin: 40px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        
+        h1 { color: #2c3e50; border-bottom: 2px solid #005f73; padding-bottom: 10px; margin-bottom: 20px; }
+        p { color: #666; margin-bottom: 30px; }
 
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo {
-            height: 65px;
-            width: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 5px;
-        }
-
-        .nav-bar a {
-            color: white;
-            text-decoration: none;
-            padding: 12px 22px;
-            font-weight: 600;
-            font-size: 1.05em;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-bar a:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .nav-bar a.active {
-            background: #005f73;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-        }
-
-        h1 {
-            color: #2c3e50;
-            font-size: 2.8em;
-            margin: 0 0 15px 0;
-            font-weight: 700;
-            background: linear-gradient(135deg, #2c3e50 0%, #005f73 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Status Legend */
-        .status-legend {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            padding: 25px 30px;
-            border-radius: 12px;
-            margin: 25px 0 35px 0;
-            border-left: 5px solid #0a9396;
-        }
-
-        .status-legend p {
-            margin: 0 0 12px 0;
-            font-size: 1.05em;
-            line-height: 1.8;
-        }
-
-        .status-legend p:last-child {
-            margin-bottom: 0;
-        }
-
-        .status-legend strong {
-            font-weight: 700;
-            font-size: 1.1em;
-            color: #2c3e50;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-weight: 700;
-            font-size: 0.9em;
-            margin-left: 8px;
-        }
-
-        .status-published {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .status-processed {
-            background: #cffafe;
-            color: #164e63;
-        }
-
-        .status-pending {
-            background: #f3f4f6;
-            color: #4b5563;
-        }
-
-        /* Spreadsheet Wrapper */
+        /* The Live Spreadsheet Window */
         .sheet-wrapper {
             width: 100%;
-            height: 700px;
-            border: 3px solid #e8f0e5;
-            border-radius: 12px;
+            height: 850px; /* Adjust height if the list gets longer */
+            border: 1px solid #ddd;
+            border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            background: white;
         }
 
         iframe {
@@ -174,113 +45,53 @@
             height: 100%;
             border: none;
         }
+        
+        .footer { text-align: center; margin-top: 50px; font-size: 0.9em; color: #666; padding-bottom: 20px; }
+        /* MOBILE TWEAKS (Add this to the bottom of your style section) */
+        @media (max-width: 600px) {
+            /* 1. Stack the menu vertically so it's easier to tap */
+            .nav-bar { flex-direction: column; padding: 20px 10px; }
+            .nav-bar a { margin: 10px 0; display: block; font-size: 1.2em; }
+            .logo { margin-right: 0; margin-bottom: 10px; }
 
-        /* Footer */
-        .footer {
-            text-align: center;
-            margin: 60px auto 0;
-            padding: 40px 30px;
-            font-size: 0.95em;
-            color: #666;
-            max-width: 1100px;
-            background: white;
-            border-radius: 20px 20px 0 0;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
-        }
+            /* 2. Shrink the white box margins so it fits the screen */
+            .container { margin: 10px; padding: 20px; width: auto; }
+            h1 { font-size: 1.8em; }
 
-        .footer img {
-            transition: transform 0.3s ease;
-        }
-
-        .footer img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                padding: 15px 20px;
-                gap: 15px;
-            }
-
-            .logo-section {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                width: 100%;
-                gap: 8px;
-            }
-
-            .nav-bar a {
-                display: block;
-                text-align: center;
-                padding: 14px;
-                font-size: 1.1em;
-            }
-
-            .container {
-                margin: 20px 15px;
-                padding: 30px 20px;
-            }
-
-            h1 {
-                font-size: 2.2em;
-            }
-
-            .sheet-wrapper {
-                height: 600px;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-
-            .status-legend {
-                padding: 20px;
-            }
+            /* 3. Make the spreadsheet scroll sideways instead of breaking */
+            .sheet-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
         }
     </style>
 </head>
 <body>
+
     <div class="nav-bar">
-        <div class="nav-container">
-            <div class="logo-section">
-                <img src="logo.png" alt="IFML Logo" class="logo">
-            </div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="collection.html" class="active">Collection Status</a>
-                <a href="about.html">About</a>
-            </div>
-        </div>
+        <img src="logo.png" alt="IFML Logo" class="logo">
+        <a href="index.html">Home</a>
+        <a href="collection.html">Collection Status</a>
+        <a href="about.html">About</a>
     </div>
 
     <div class="container">
         <h1>Collection Roadmap</h1>
-
-        <div class="status-legend">
-            <p>This dashboard tracks the real-time status of specimens in the IFML digitization pipeline.</p>
-            <p><strong>Status Key:</strong></p>
-            <p><span class="status-badge status-published">Published</span> — Live on Zenodo with permanent DOI</p>
-            <p><span class="status-badge status-processed">Processed</span> — Scanned and ready for upload</p>
-            <p><span class="status-badge status-pending">Not Scanned</span> — Queued for digitization</p>
-        </div>
+        <p>This dashboard tracks the real-time status of specimens in the IFML digitization pipeline. 
+           <br><strong>Status Key:</strong> <span style="color:green; font-weight:bold;">Published</span> (Live on Zenodo) | <span style="color:#005f73; font-weight:bold;">Processed</span> (Ready for Upload) | <span style="color:#666;">Not Scanned</span></p>
 
         <div class="sheet-wrapper">
-            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHnqkIBEM6EG7hSPytdbRyNSOGHtBuDOtCzYmLiD1xltBzIuWrTQYwuQTulapWWj9EOr5gnS3rwLxp/pubhtml?gid=0&single=true&widget=true&headers=false"></iframe>
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHnqkIBEM6EG7_hSPytdbRyNSOGHtBuDOtCzYmLiD1xltBzIuWrTQYwuQTulapWWj9EOr5gnS3rwLx/pubhtml?gid=0&single=true&widget=true&headers=false"></iframe>
         </div>
+
     </div>
 
     <div class="footer">
-        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-            <img alt="Creative Commons License" style="border-width:0; margin-bottom:5px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
-        </a>
-        <br>
-        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-        <br>
-        &copy; 2026 Iowa Forestry Media Library.
-    </div>
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons License" style="border-width:0; margin-bottom:5px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    <br>
+    &copy; 2026 Iowa Forestry Media Library.
+</div>
+
 </body>
 </html>
