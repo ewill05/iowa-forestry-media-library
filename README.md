@@ -2,7 +2,7 @@
 
 This repository contains the source code for the **Iowa Forestry Media Library** website, a digital archive of high-resolution dendrology scans for educational and research use.
 
-**Live Site:** [https://iowaforestrymedialibrary.org](https://iowaforestrymedialibrary.org) (or your github.io link)
+**Live Site:** [https://iowaforestrymedialibrary.org](https://iowaforestrymedialibrary.org) 
 
 ## Project Overview
 The IFML provides open-access, high-fidelity scans of foliage, twigs, and fruit for tree species native and common to Iowa. The goal is to provide a modern, digital alternative to physical herbarium specimens.
@@ -18,5 +18,5 @@ The IFML provides open-access, high-fidelity scans of foliage, twigs, and fruit 
 * **Image Assets:** Creative Commons Attribution 4.0 (CC BY 4.0).
 
 ## Contact
-**Maintainer:** [Your Name]  
+**Maintainer:** Eli Willard  
 **Email:** contact@iowaforestrymedialibrary.org
