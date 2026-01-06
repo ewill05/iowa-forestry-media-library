@@ -3,19 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found - IFML</title>
+    <title>404 - Page Not Found | Iowa Forestry Media Library</title>
+    <link rel="icon" type="image/png" href="logo.png">
+
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 50px; color: #2c3e50; background-color: #f4f4f9; }
-        h1 { font-size: 3em; margin-bottom: 10px; }
-        p { font-size: 1.2em; color: #666; }
-        a { color: #005f73; text-decoration: none; font-weight: bold; border: 2px solid #005f73; padding: 10px 20px; border-radius: 5px; }
-        a:hover { background-color: #005f73; color: white; }
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f0e5 100%);
+            color: #333;
+            line-height: 1.7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 60px 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            margin: 20px;
+        }
+
+        .error-code {
+            font-size: 6em;
+            font-weight: 700;
+            margin: 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #005f73 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin: 20px 0 15px 0;
+            font-weight: 600;
+        }
+
+        p {
+            color: #666;
+            font-size: 1.15em;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #005f73 0%, #0a9396 100%);
+            color: white;
+            padding: 16px 35px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,95,115,0.3);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #0a9396 0%, #94d2bd 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,95,115,0.4);
+        }
+
+        .icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .error-container {
+                padding: 40px 25px;
+            }
+
+            .error-code {
+                font-size: 4em;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>404</h1>
-    <p><strong>Lost in the woods?</strong><br>The page you are looking for does not exist.</p>
-    <br>
-    <a href="index.html">Return to Trailhead (Home)</a>
+    <div class="error-container">
+        <div class="icon">🌲</div>
+        <div class="error-code">404</div>
+        <h1>Page Not Found</h1>
+        <p>The specimen you're looking for has wandered off the trail. Let's get you back to familiar ground.</p>
+        <a href="index.html" class="btn">Return Home</a>
+    </div>
 </body>
 </html>
