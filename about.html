@@ -4,56 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Iowa Forestry Media Library</title>
-    <link rel="icon" type="image/png" href="logo.jpg">
+    <link rel="icon" type="image/png" href="logo.png">
 
     <meta name="description" content="Mission and methodology of the Iowa Forestry Media Library. Open-access dendrology preservation.">
     <meta name="keywords" content="forestry, dendrology, methodology, scanning, botany, Iowa, IFML">
     <meta name="author" content="Iowa Forestry Media Library">
     <meta property="og:title" content="About - Iowa Forestry Media Library">
     <meta property="og:description" content="Our mission to preserve forestry specimens in high-resolution digital formats.">
+    <meta property="og:image" content="https://iowaforestrymedialibrary.org/logo.png">
+    <meta property="og:url" content="https://iowaforestrymedialibrary.org/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Iowa Forestry Media Library">
+    <meta property="og:description" content="An open-access archive of high-resolution dendrology scans for research and education.">
+    <meta property="og:image" content="https://[YOUR-GITHUB-USERNAME].github.io/[YOUR-REPO-NAME]/logo.png">
+    <meta property="og:url" content="https://[YOUR-GITHUB-USERNAME].github.io/[YOUR-REPO-NAME]/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://[YOUR-GITHUB-USERNAME].github.io/[YOUR-REPO-NAME]/logo.png">
 
     <style>
-        :root {
-            --forest-green: #2d6a4f;
-            --deep-bark: #1b4332;
-            --accent-teal: #005f73;
-            --soft-blue: #e0fbfc;
-        }
-
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.8; color: #333; margin: 0; padding: 0; background-color: #fdfdfd; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f9; }
         
-        .nav-bar { background-color: var(--deep-bark); padding: 10px 20px; display: flex; align-items: center; justify-content: center; position: sticky; top: 0; z-index: 1000; }
-        .logo { height: 60px; margin-right: 20px; border-radius: 4px; }
-        .nav-bar a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        /* Navigation Bar */
+        .nav-bar { background-color: #2c3e50; padding: 10px 20px; display: flex; align-items: center; justify-content: center; }
+        .logo { height: 60px; margin-right: 20px; width: auto; }
+        .nav-bar a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em; }
+        .nav-bar a:hover { text-decoration: underline; color: #a8d5e2; }
 
-        .container { max-width: 800px; margin: 60px auto; background: white; padding: 50px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #eee; }
-        
-        h1 { color: var(--deep-bark); border-bottom: 3px solid var(--accent-teal); padding-bottom: 15px; font-size: 2.5em; }
-        h2 { color: var(--accent-teal); margin-top: 40px; font-size: 1.8em; }
-        
-        p, li { font-size: 1.1em; color: #444; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 12px; }
-        li strong { color: var(--deep-bark); }
-
-        .contact-box { background-color: var(--soft-blue); padding: 30px; border-radius: 8px; margin-top: 40px; border-left: 6px solid var(--accent-teal); }
-        .contact-box h3 { margin-top: 0; color: var(--deep-bark); }
-
-        blockquote { background: #f9f9f9; border-left: 5px solid #ccc; margin: 25px 0; padding: 20px; font-style: italic; font-size: 1.1em; border-radius: 0 8px 8px 0; }
-
-        .footer { text-align: center; margin-top: 80px; padding: 40px 20px; background: #f9f9f9; border-top: 1px solid #eee; }
-
+        .container { max-width: 800px; margin: 40px auto; background: white; padding: 50px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 2px solid #005f73; padding-bottom: 10px; }
+        h2 { color: #0a9396; margin-top: 30px; }
+        .contact-box { background-color: #e0fbfc; padding: 20px; border-radius: 5px; margin-top: 30px; border-left: 5px solid #005f73; }
+        .footer { text-align: center; margin-top: 50px; font-size: 0.9em; color: #666; padding-bottom: 20px; }
+        /* MOBILE TWEAKS (Add this to the bottom of your style section) */
         @media (max-width: 600px) {
-            .container { margin: 15px; padding: 25px; }
-            h1 { font-size: 1.8em; }
+            /* 1. Stack the menu vertically so it's easier to tap */
             .nav-bar { flex-direction: column; padding: 20px 10px; }
+            .nav-bar a { margin: 10px 0; display: block; font-size: 1.2em; }
+            .logo { margin-right: 0; margin-bottom: 10px; }
+
+            /* 2. Shrink the white box margins so it fits the screen */
+            .container { margin: 10px; padding: 20px; width: auto; }
+            h1 { font-size: 1.8em; }
+
+            /* 3. Make the spreadsheet scroll sideways instead of breaking */
+            .sheet-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
         }
     </style>
 </head>
 <body>
 
     <div class="nav-bar">
-        <img src="logo.jpg" alt="IFML Logo" class="logo">
+        <img src="logo.png" alt="IFML Logo" class="logo">
         <a href="index.html">Home</a>
         <a href="collection.html">Collection Status</a>
         <a href="about.html">About</a>
@@ -62,28 +64,28 @@
     <div class="container">
         <h1>About the Project</h1>
         
-        [cite_start]<p>The <strong>Iowa Forestry Media Library (IFML)</strong> is an open-access initiative dedicated to digitizing and preserving high-resolution botanical imagery for forestry education and research. [cite: 3, 4]</p>
+        <p>The <strong>Iowa Forestry Media Library (IFML)</strong> is an open-access initiative dedicated to digitizing and preserving high-resolution botanical imagery for forestry education and research.</p>
 
         <h2>The Mission</h2>
         <p>Forestry students and professionals often rely on field guides with small, low-resolution printed images. The IFML seeks to solve this by providing 4K+ resolution scans of dendrology specimens, allowing users to zoom in on critical identification features—from the texture of a winter bud to the venation of a leaf.</p>
 
         <h2>The Methodology</h2>
-        <p>Specimens in this library are sourced from verified field collections within the Midwest region. [cite_start]We utilize high-fidelity flatbed scanning techniques to capture botanical details often lost in traditional photography. [cite: 1, 4]</p>
+        <p>Specimens in this library are sourced from verified field collections within the Midwest region. We utilize high-fidelity flatbed scanning techniques to capture botanical details often lost in traditional photography.</p>
         
         <p><strong>Technical Standards:</strong></p>
         <ul>
-            [cite_start]<li><strong>Resolution:</strong> All specimens are scanned at a minimum of 1200 DPI, allowing for microscopic examination of leaf venation and bud scars. [cite: 4]</li>
-            [cite_start]<li><strong>Lighting:</strong> Controlled, calibrated lighting eliminates shadows and lens distortion, ensuring accurate color reproduction for identification. [cite: 4]</li>
-            [cite_start]<li><strong>Data Integrity:</strong> Master files are preserved in lossless 48-bit TIFF format to ensure no data is lost to compression over time. [cite: 4]</li>
+            <li><strong>Resolution:</strong> All specimens are scanned at a minimum of 1200 DPI, allowing for microscopic examination of leaf venation and bud scars.</li>
+            <li><strong>Lighting:</strong> Controlled, calibrated lighting eliminates shadows and lens distortion, ensuring accurate color reproduction for identification.</li>
+            <li><strong>Data Integrity:</strong> Master files are preserved in lossless 48-bit TIFF format to ensure no data is lost to compression over time.</li>
         </ul>
 
         <h2>Open Access</h2>
-        <p>We believe that educational resources should be free. [cite_start]All data in this library is hosted publicly on Zenodo and GitHub, ensuring it remains accessible to students, researchers, and the public indefinitely. [cite: 5]</p>
+        <p>We believe that educational resources should be free. All data in this library is hosted publicly on Zenodo and GitHub, ensuring it remains accessible to students, researchers, and the public indefinitely.</p>
 
         <h2>Citing This Library</h2>
         <p>If you use these images in research or educational materials, please cite the collection as follows:</p>
-        <blockquote>
-            Iowa Forestry Media Library. (2026). <em>Digital Dendrology Archive</em>. [cite_start]Retrieved from https://iowaforestrymedialibrary.org [cite: 6]
+        <blockquote style="background: #f9f9f9; border-left: 5px solid #ccc; margin: 10px 0; padding: 10px; font-style: italic;">
+            Iowa Forestry Media Library. (2026). <em>Digital Dendrology Archive</em>. Retrieved from https://iowaforestrymedialibrary.org
         </blockquote>
 
         <div class="contact-box">
@@ -91,17 +93,18 @@
             <p>For inquiries regarding data usage, contributions, or species requests, please contact:</p>
             <p><strong>Email:</strong> <a href="mailto:contact@iowaforestrymedialibrary.org">contact@iowaforestrymedialibrary.org</a></p>
         </div>
+
     </div>
 
     <div class="footer">
-        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-            <img alt="Creative Commons License" style="border-width:0; margin-bottom:10px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
-        </a>
-        <br />
-        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-        <br>
-        &copy; 2026 Iowa Forestry Media Library.
-    </div>
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons License" style="border-width:0; margin-bottom:5px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    <br>
+    &copy; 2026 Iowa Forestry Media Library.
+</div>
 
 </body>
 </html>
