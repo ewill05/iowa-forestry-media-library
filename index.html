@@ -4,119 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iowa Forestry Media Library</title>
-    <link rel="icon" type="image/png" href="logo.jpg">
+    <link rel="icon" type="image/png" href="logo.png">
+
     <meta name="description" content="Open-access archive of high-resolution dendrology and forestry media for research and education. Featuring 4K+ scans of Midwest tree species.">
     <meta name="keywords" content="forestry, dendrology, tree identification, plant science, botany, high-resolution scans, open access, IFML">
     <meta name="author" content="Iowa Forestry Media Library">
     <meta property="og:title" content="Iowa Forestry Media Library">
     <meta property="og:description" content="The digital home for high-fidelity forestry media and dendrology scans. Open access for students and researchers.">
-    <meta property="og:image" content="https://iowaforestrymedialibrary.org/logo.jpg">
+    <meta property="og:image" content="https://iowaforestrymedialibrary.org/logo.png">
     <meta property="og:url" content="https://iowaforestrymedialibrary.org">
     <meta property="og:type" content="website">
+    <meta property="og:title" content="Iowa Forestry Media Library">
+    <meta property="og:description" content="An open-access archive of high-resolution dendrology scans for research and education.">
+    <meta property="og:image" content="https://[YOUR-GITHUB-USERNAME].github.io/[YOUR-REPO-NAME]/logo.png">
+    <meta property="og:url" content="https://[YOUR-GITHUB-USERNAME].github.io/[YOUR-REPO-NAME]/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://[YOUR-GITHUB-USERNAME].github.io/[YOUR-REPO-NAME]/logo.png">
 
     <style>
-        :root {
-            --forest-green: #2d6a4f;
-            --deep-bark: #1b4332;
-            --accent-teal: #005f73;
-            --soft-cream: #f4f4f9;
-            --text-main: #333;
-        }
-
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            line-height: 1.6; 
-            color: var(--text-main); 
-            margin: 0; 
-            padding: 0; 
-            background-color: #ffffff; 
-            text-align: center;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; text-align: center; margin: 0; padding: 0; background-color: #f4f4f9; color: #333; }
         
-        /* Modern Navigation */
-        .nav-bar { 
-            background-color: var(--deep-bark); 
-            padding: 10px 20px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .logo { height: 60px; margin-right: 20px; width: auto; border-radius: 4px; }
-        .nav-bar a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em; transition: 0.3s; }
-        .nav-bar a:hover { color: #a8d5e2; text-decoration: underline; }
+        /* Navigation Bar */
+        .nav-bar { background-color: #2c3e50; padding: 10px 20px; display: flex; align-items: center; justify-content: center; }
+        .logo { height: 60px; margin-right: 20px; width: auto; }
+        .nav-bar a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em; }
+        .nav-bar a:hover { text-decoration: underline; color: #a8d5e2; }
         
-        /* Hero Section */
-        .container { max-width: 900px; margin: 40px auto; padding: 20px; }
+        /* Main Layout */
+        .container { max-width: 800px; margin: 40px auto; padding: 20px; }
+        
+        /* Hero Text */
         .hero { margin-bottom: 40px; }
-        h1 { color: var(--deep-bark); font-size: 2.8em; margin-bottom: 10px; }
+        h1 { color: #2c3e50; font-size: 2.5em; margin-bottom: 10px; }
         .subtitle { font-size: 1.2em; color: #555; max-width: 600px; margin: 0 auto 30px auto; }
         
-        /* Preserved Specimen Card with Better Shadow */
+        /* Specimen Card Styling */
         .specimen-card {
             background: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             max-width: 700px;
             margin: 0 auto 40px auto;
-            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
         }
         
         .tag {
             background-color: #e0fbfc;
-            color: var(--accent-teal);
-            padding: 6px 15px;
+            color: #005f73;
+            padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.8em;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .specimen-img { width: 100%; height: auto; border-radius: 6px; border: 1px solid #ddd; }
-        .caption { margin-top: 15px; font-style: italic; color: #666; font-size: 0.95em; }
-
-        /* Status & Buttons */
-        .status-badge { font-weight: bold; color: var(--forest-green); margin-bottom: 20px; display: block; }
-        .btn { 
-            display: inline-block; 
-            background-color: var(--accent-teal); 
-            color: white; 
-            padding: 18px 35px; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            font-size: 1.1em; 
-            transition: all 0.3s ease; 
-            box-shadow: 0 4px 15px rgba(0,95,115,0.2);
+        .specimen-img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #eee;
         }
-        .btn:hover { background-color: #0a9396; transform: translateY(-2px); }
-        
-        .footer { margin-top: 80px; font-size: 0.9em; color: #666; padding: 40px 20px; background: #f9f9f9; border-top: 1px solid #eee; }
 
+        .caption {
+            margin-top: 15px;
+            font-style: italic;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Button Styling */
+        .btn { display: inline-block; background-color: #005f73; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1em; transition: background 0.3s; }
+        .btn:hover { background-color: #0a9396; }
+        
+        .footer { margin-top: 50px; font-size: 0.9em; color: #666; padding-bottom: 20px; }
+        /* MOBILE TWEAKS (Add this to the bottom of your style section) */
         @media (max-width: 600px) {
+            /* 1. Stack the menu vertically so it's easier to tap */
             .nav-bar { flex-direction: column; padding: 20px 10px; }
-            .nav-bar a { margin: 10px 0; }
-            h1 { font-size: 2em; }
+            .nav-bar a { margin: 10px 0; display: block; font-size: 1.2em; }
+            .logo { margin-right: 0; margin-bottom: 10px; }
+
+            /* 2. Shrink the white box margins so it fits the screen */
+            .container { margin: 10px; padding: 20px; width: auto; }
+            h1 { font-size: 1.8em; }
+
+            /* 3. Make the spreadsheet scroll sideways instead of breaking */
+            .sheet-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
         }
     </style>
 </head>
 <body>
 
     <div class="nav-bar">
-        <img src="logo.jpg" alt="IFML Logo" class="logo">
+        <img src="logo.png" alt="IFML Logo" class="logo">
         <a href="index.html">Home</a>
         <a href="collection.html">Collection Status</a>
         <a href="about.html">About</a>
     </div>
 
     <div class="container">
+        
         <div class="hero">
             <h1>Iowa Forestry Media Library</h1>
             <p class="subtitle">Preserving dendrology specimens through open-access, high-fidelity digital imaging.</p>
@@ -128,19 +121,23 @@
             <p class="caption">Fig 1. Swamp White Oak (<em>Quercus bicolor</em>) - Foliage and twig detail.</p>
         </div>
 
-        <p class="status-badge">Status: Data Ingest Active</p>
+        <p><strong>Status:</strong> Data Ingest Active</p>
         <a href="https://zenodo.org/communities/ifml-archive" class="btn">View Archive Collection</a>
+        
     </div>
 
     <div class="footer">
-        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-            <img alt="Creative Commons License" style="border-width:0; margin-bottom:10px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
-        </a>
-        <br />
-        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-        <br>
-        &copy; 2026 Iowa Forestry Media Library.
-    </div>
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons License" style="border-width:0; margin-bottom:5px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    <br>
+    &copy; 2026 Iowa Forestry Media Library.
+</div>
 
 </body>
 </html>
+
+
+
