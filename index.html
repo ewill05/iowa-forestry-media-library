@@ -23,80 +23,89 @@
     <meta name="twitter:image" content="https://[YOUR-GITHUB-USERNAME].github.io/[YOUR-REPO-NAME]/logo.png">
 
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; text-align: center; margin: 0; padding: 0; background-color: #f4f4f9; color: #333; }
-        
-        /* Navigation Bar */
-        .nav-bar { background-color: #2c3e50; padding: 10px 20px; display: flex; align-items: center; justify-content: center; }
-        .logo { height: 60px; margin-right: 20px; width: auto; }
-        .nav-bar a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em; }
-        .nav-bar a:hover { text-decoration: underline; color: #a8d5e2; }
-        
-        /* Main Layout */
-        .container { max-width: 800px; margin: 40px auto; padding: 20px; }
-        
-        /* Hero Text */
-        .hero { margin-bottom: 40px; }
-        h1 { color: #2c3e50; font-size: 2.5em; margin-bottom: 10px; }
-        .subtitle { font-size: 1.2em; color: #555; max-width: 600px; margin: 0 auto 30px auto; }
-        
-        /* Specimen Card Styling */
-        .specimen-card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .tag {
-            background-color: #e0fbfc;
-            color: #005f73;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        :root {
+    --forest-green: #2d6a4f;
+    --deep-bark: #1b4332;
+    --accent-teal: #005f73;
+    --soft-cream: #f8f9fa;
+    --text-main: #333;
+    --archive-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
 
-        .specimen-img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-            border: 1px solid #eee;
-        }
+body { 
+    font-family: 'Inter', -apple-system, sans-serif; 
+    line-height: 1.6; 
+    color: var(--text-main); 
+    margin: 0; 
+    background-color: #fdfdfd; 
+}
 
-        .caption {
-            margin-top: 15px;
-            font-style: italic;
-            color: #666;
-            font-size: 0.9em;
-        }
+/* 🌿 Enhanced Navigation */
+.nav-bar { 
+    background-color: var(--deep-bark); 
+    padding: 15px 40px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
 
-        /* Button Styling */
-        .btn { display: inline-block; background-color: #005f73; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1em; transition: background 0.3s; }
-        .btn:hover { background-color: #0a9396; }
-        
-        .footer { margin-top: 50px; font-size: 0.9em; color: #666; padding-bottom: 20px; }
-        /* MOBILE TWEAKS (Add this to the bottom of your style section) */
-        @media (max-width: 600px) {
-            /* 1. Stack the menu vertically so it's easier to tap */
-            .nav-bar { flex-direction: column; padding: 20px 10px; }
-            .nav-bar a { margin: 10px 0; display: block; font-size: 1.2em; }
-            .logo { margin-right: 0; margin-bottom: 10px; }
+.nav-bar a { 
+    color: white; 
+    text-decoration: none; 
+    margin: 0 15px; 
+    font-weight: 500; 
+    font-size: 1rem; 
+    transition: color 0.3s;
+}
 
-            /* 2. Shrink the white box margins so it fits the screen */
-            .container { margin: 10px; padding: 20px; width: auto; }
-            h1 { font-size: 1.8em; }
+.nav-bar a:hover { color: #a8d5e2; }
 
-            /* 3. Make the spreadsheet scroll sideways instead of breaking */
-            .sheet-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-        }
+/* 🌳 Modern Specimen Card */
+.specimen-card {
+    background: white;
+    padding: 15px;
+    border-radius: 4px; /* Sharper edges for a more professional look */
+    border: 1px solid #eee;
+    box-shadow: var(--archive-shadow);
+    max-width: 700px;
+    margin: 40px auto;
+    transition: transform 0.3s ease;
+}
+
+.specimen-card:hover {
+    transform: translateY(-5px);
+}
+
+.tag {
+    background-color: var(--forest-green);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 2px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* 🧪 Typography & Detail */
+h1 { color: var(--deep-bark); font-weight: 700; }
+.subtitle { font-style: italic; color: #666; }
+
+.btn { 
+    display: inline-block; 
+    background-color: var(--accent-teal); 
+    color: white; 
+    padding: 12px 25px; 
+    border-radius: 4px; 
+    text-decoration: none; 
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn:hover { background-color: var(--forest-green); }
     </style>
 </head>
 <body>
@@ -138,6 +147,7 @@
 
 </body>
 </html>
+
 
 
 
