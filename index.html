@@ -5,22 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iowa Forestry Media Library</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; text-align: center; padding: 50px; background-color: #f4f4f9; color: #333; }
-        .container { max-width: 600px; margin: auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; text-align: center; margin: 0; padding: 0; background-color: #f4f4f9; color: #333; }
+        /* Navigation Bar Styles */
+        .nav-bar { background-color: #2c3e50; padding: 15px; }
+        .nav-bar a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em; }
+        .nav-bar a:hover { text-decoration: underline; color: #a8d5e2; }
+        
+        /* Main Content Styles */
+        .container { max-width: 600px; margin: 60px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         h1 { color: #2c3e50; }
         p { line-height: 1.6; }
         .btn { display: inline-block; background-color: #005f73; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
         .btn:hover { background-color: #0a9396; }
+        .footer { margin-top: 50px; font-size: 0.9em; color: #666; padding-bottom: 20px; }
     </style>
 </head>
 <body>
+
+    <div class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About the Library</a>
+    </div>
+
     <div class="container">
         <h1>Iowa Forestry Media Library</h1>
         <p><strong>Status:</strong> Initializing Data Ingest</p>
-        <p>Welcome to the future home of the IFML. We are currently processing high-resolution scans of the Iowa dendrology collection.</p>
+        <p>Welcome to the digital home of the IFML. We are currently processing high-resolution scans of the Iowa dendrology collection.</p>
         <p>The first dataset (<em>Quercus bicolor</em>) is available now on Zenodo.</p>
-        <a href="https://zenodo.org/communities/ifml-archive" class="btn">View Data on Zenodo</a>
+        <a href="https://zenodo.org/record/12345" class="btn">View Data on Zenodo</a>
     </div>
-</body>
 
+    <div class="footer">
+        &copy; 2026 Iowa Forestry Media Library.
+    </div>
+
+</body>
 </html>
