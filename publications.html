@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications & Impact - Iowa Forestry Media Library</title>
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <meta name="description" content="Research publications, presentations, and educational materials citing the Iowa Forestry Media Library collection.">
+    <meta property="og:title" content="Publications & Impact - IFML">
+    <meta property="og:description" content="Track the scholarly impact of the Iowa Forestry Media Library digital dendrology archive.">
+    <meta property="og:image" content="https://iowaforestrymedialibrary.org/logo.png">
+    <meta property="og:url" content="https://iowaforestrymedialibrary.org/publications.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://iowaforestrymedialibrary.org/logo.png">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f0e5 100%);
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            height: 65px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 5px;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            font-weight: 600;
+            font-size: 1.05em;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-bar a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .nav-bar a.active {
+            background: #005f73;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 50px 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.8em;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2c3e50 0%, #005f73 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            color: #005f73;
+            font-size: 1.9em;
+            margin: 40px 0 20px 0;
+            font-weight: 600;
+            border-left: 5px solid #0a9396;
+            padding-left: 20px;
+        }
+
+        h3 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Stats Dashboard */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #e0fbfc 0%, #f0f9ff 100%);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 3px solid #94d2bd;
+            box-shadow: 0 5px 15px rgba(0,95,115,0.1);
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: 700;
+            color: #005f73;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1em;
+            color: #2c3e50;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* Publication Card */
+        .pub-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #f0f9ff 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 5px solid #0a9396;
+            box-shadow: 0 5px 15px rgba(0,95,115,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pub-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(0,95,115,0.15);
+        }
+
+        .pub-title {
+            font-size: 1.35em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0 0 12px 0;
+            line-height: 1.4;
+        }
+
+        .pub-authors {
+            color: #005f73;
+            font-size: 1.05em;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .pub-venue {
+            color: #666;
+            font-style: italic;
+            font-size: 1em;
+            margin: 0 0 15px 0;
+        }
+
+        .pub-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .pub-badge {
+            background: white;
+            color: #005f73;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            border: 2px solid #e0fbfc;
+        }
+
+        .pub-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #005f73 0%, #0a9396 100%);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .pub-link:hover {
+            background: linear-gradient(135deg, #0a9396 0%, #94d2bd 100%);
+            transform: translateY(-2px);
+        }
+
+        /* News Item */
+        .news-item {
+            padding: 20px 0;
+            border-bottom: 2px solid #e8f0e5;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-date {
+            color: #005f73;
+            font-weight: 700;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .news-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+        }
+
+        .news-description {
+            color: #666;
+            font-size: 1em;
+            margin: 0;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 30px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .empty-state-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .empty-state h3 {
+            color: #005f73;
+            margin: 0 0 15px 0;
+        }
+
+        .empty-state p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Submit Box */
+        .submit-box {
+            background: linear-gradient(135deg, #e0fbfc 0%, #c7ecee 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: center;
+            border: 3px solid #94d2bd;
+        }
+
+        .submit-box h3 {
+            margin-top: 0;
+            color: #005f73;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #005f73 0%, #0a9396 100%);
+            color: white;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.05em;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 18px rgba(0,95,115,0.3);
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #0a9396 0%, #94d2bd 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,95,115,0.4);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin: 60px auto 0;
+            padding: 40px 30px;
+            font-size: 0.95em;
+            color: #666;
+            max-width: 1000px;
+            background: white;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+        }
+
+        .footer img {
+            transition: transform 0.3s ease;
+        }
+
+        .footer img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 15px 20px;
+                gap: 15px;
+            }
+
+            .logo-section {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                gap: 8px;
+            }
+
+            .nav-bar a {
+                display: block;
+                text-align: center;
+                padding: 14px;
+                font-size: 1.1em;
+            }
+
+            .container {
+                margin: 20px 15px;
+                padding: 30px 25px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pub-meta {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="logo.png" alt="IFML Logo" class="logo">
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="collection.html">Collection Status</a>
+                <a href="software.html">Software</a>
+                <a href="methods.html">Methods</a>
+                <a href="publications.html" class="active">Publications</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Publications & Impact</h1>
+
+        <p>Track the scholarly and educational impact of the Iowa Forestry Media Library. This page showcases research publications, conference presentations, educational materials, and media coverage that cite or utilize IFML specimens.</p>
+
+        <h2>Impact Metrics</h2>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Peer-Reviewed Papers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Conference Presentations</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Educational Uses</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Total Citations</div>
+            </div>
+        </div>
+
+        <h2>Peer-Reviewed Publications</h2>
+
+        <div class="empty-state">
+            <div class="empty-state-icon">📚</div>
+            <h3>No Publications Yet</h3>
+            <p>As researchers begin to cite IFML specimens in their work, publications will be listed here. Check back soon for updates, or be the first to use our collection in your research!</p>
+        </div>
+
+        <!-- EXAMPLE TEMPLATE FOR FUTURE PUBLICATIONS
+        <div class="pub-card">
+            <div class="pub-title">High-Resolution Morphometric Analysis of Quercus Species in the Midwest</div>
+            <div class="pub-authors">Smith, J.A., Johnson, K.L., & Davis, M.R.</div>
+            <div class="pub-venue">Journal of Plant Systematics, 45(3), 234-248</div>
+            <p>This study utilized IFML's high-resolution scans to perform detailed morphometric analysis of leaf venation patterns across 12 oak species native to Iowa, revealing previously undocumented trait variation.</p>
+            <div class="pub-meta">
+                <span class="pub-badge">2026</span>
+                <span class="pub-badge">Dendrology</span>
+                <span class="pub-badge">DOI: 10.xxxx/xxxxx</span>
+            </div>
+            <a href="#" class="pub-link">View Publication →</a>
+        </div>
+        -->
+
+        <h2>Conference Presentations</h2>
+
+        <div class="empty-state">
+            <div class="empty-state-icon">🎤</div>
+            <h3>No Presentations Yet</h3>
+            <p>Conference talks, posters, and workshop materials using IFML data will appear here as they become available.</p>
+        </div>
+
+        <!-- EXAMPLE TEMPLATE FOR FUTURE PRESENTATIONS
+        <div class="pub-card">
+            <div class="pub-title">Digital Dendrology Archives: Best Practices for High-Resolution Botanical Imaging</div>
+            <div class="pub-authors">Your Name</div>
+            <div class="pub-venue">Society of American Foresters Annual Convention, Portland, OR</div>
+            <p>Oral presentation covering the development and methodology of the Iowa Forestry Media Library, including scanning protocols and Zenodo archival workflows.</p>
+            <div class="pub-meta">
+                <span class="pub-badge">October 2026</span>
+                <span class="pub-badge">Poster</span>
+            </div>
+        </div>
+        -->
+
+        <h2>Educational Materials</h2>
+
+        <div class="empty-state">
+            <div class="empty-state-icon">🎓</div>
+            <h3>No Educational Uses Documented Yet</h3>
+            <p>Teachers and educators using IFML specimens in lesson plans, lab exercises, or identification guides are encouraged to share their materials here.</p>
+        </div>
+
+        <!-- EXAMPLE TEMPLATE FOR FUTURE EDUCATIONAL USES
+        <div class="pub-card">
+            <div class="pub-title">Introduction to Tree Identification: A Digital Field Guide</div>
+            <div class="pub-authors">Williams, T.K.</div>
+            <div class="pub-venue">Iowa State University, Forestry 201 Course Materials</div>
+            <p>Undergraduate course lab manual incorporating IFML high-resolution scans for student identification exercises. Students reported 35% improvement in leaf morphology recognition compared to traditional textbook images.</p>
+            <div class="pub-meta">
+                <span class="pub-badge">Spring 2026</span>
+                <span class="pub-badge">Undergraduate Course</span>
+            </div>
+        </div>
+        -->
+
+        <h2>Project News & Announcements</h2>
+
+        <div class="news-item">
+            <div class="news-date">January 6, 2026</div>
+            <div class="news-title">Iowa Forestry Media Library Launches</div>
+            <p class="news-description">The IFML archive is now live on Zenodo with the first batch of high-resolution dendrology specimens. The collection features swamp white oak (Quercus bicolor) reference scans and establishes standardized protocols for future digitization efforts.</p>
+        </div>
+
+        <!-- ADD FUTURE NEWS ITEMS HERE
+        <div class="news-item">
+            <div class="news-date">March 15, 2026</div>
+            <div class="news-title">IFML Reaches 50 Species Milestone</div>
+            <p class="news-description">The archive now includes specimens from 50 unique tree species native to Iowa, representing 15 botanical families.</p>
+        </div>
+        -->
+
+        <div class="submit-box">
+            <h3>Using IFML in Your Work?</h3>
+            <p>If you've published research, created educational materials, or presented work that cites IFML specimens, we'd love to feature it here. Please send us your citation information so we can track the impact of this open-access resource.</p>
+            <a href="mailto:contact@iowaforestrymedialibrary.org?subject=Publication%20Submission" class="btn">Submit Your Publication</a>
+        </div>
+
+        <h2>How to Cite IFML</h2>
+
+        <h3>General Collection Citation</h3>
+        <div class="pub-card">
+            <p style="font-style: italic; margin: 0;">
+                Iowa Forestry Media Library. (2026). Digital Dendrology Archive. Zenodo Community. https://zenodo.org/communities/ifml-archive
+            </p>
+        </div>
+
+        <h3>Individual Specimen Citation</h3>
+        <div class="pub-card">
+            <p style="font-style: italic; margin: 0;">
+                Iowa Forestry Media Library. (2026). [Common Name] (<em>Scientific Name</em>) - [Specimen Type] - [Unique ID]. Zenodo. https://doi.org/[DOI]
+            </p>
+            <p style="margin-top: 15px; color: #666; font-size: 0.95em;">
+                <strong>Example:</strong> Iowa Forestry Media Library. (2026). Swamp White Oak (<em>Quercus bicolor</em>) - Foliage - SWO001. Zenodo. https://doi.org/10.5281/zenodo.XXXXXX
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+            <img alt="Creative Commons License" style="border-width:0; margin-bottom:5px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
+        </a>
+        <br>
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+        <br>
+        &copy; 2026 Iowa Forestry Media Library.
+    </div>
+</body>
+</html>
