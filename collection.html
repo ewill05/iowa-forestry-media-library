@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collection Status - Iowa Forestry Media Library</title>
     <link rel="icon" type="image/png" href="logo.png">
+
+    <meta name="description" content="Live tracking of the Iowa Forestry Media Library digitization pipeline.">
+    <meta property="og:title" content="Collection Status - IFML">
+    <meta property="og:description" content="View the real-time status of our dendrology scanning queue.">
     
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f9; }
@@ -16,19 +20,25 @@
         .nav-bar a:hover { text-decoration: underline; color: #a8d5e2; }
 
         /* Main Container */
-        .container { max-width: 900px; margin: 40px auto; background: white; padding: 50px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; border-bottom: 2px solid #005f73; padding-bottom: 10px; }
+        .container { max-width: 1000px; margin: 40px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         
-        /* Table Styles */
-        .status-table { width: 100%; border-collapse: collapse; margin-top: 20px; text-align: left; }
-        .status-table th { background-color: #f8f9fa; padding: 12px; border-bottom: 2px solid #ddd; color: #555; font-size: 0.9em; text-transform: uppercase; }
-        .status-table td { padding: 12px; border-bottom: 1px solid #eee; color: #333; }
-        
-        /* Badges */
-        .badge { padding: 5px 10px; border-radius: 12px; font-size: 0.8em; font-weight: bold; }
-        .badge-green { background-color: #d4edda; color: #155724; }
-        .badge-yellow { background-color: #fff3cd; color: #856404; }
-        .badge-grey { background-color: #e2e3e5; color: #383d41; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #005f73; padding-bottom: 10px; margin-bottom: 20px; }
+        p { color: #666; margin-bottom: 30px; }
+
+        /* The Live Spreadsheet Window */
+        .sheet-wrapper {
+            width: 100%;
+            height: 850px; /* Adjust height if the list gets longer */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
         
         .footer { text-align: center; margin-top: 50px; font-size: 0.9em; color: #666; padding-bottom: 20px; }
     </style>
@@ -38,48 +48,18 @@
     <div class="nav-bar">
         <img src="logo.png" alt="IFML Logo" class="logo">
         <a href="index.html">Home</a>
-        <a href="collection.html">Collection Status</a> <a href="about.html">About</a>
+        <a href="collection.html">Collection Status</a>
+        <a href="about.html">About</a>
     </div>
 
     <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h1>Collection Status</h1>
-            <a href="collection_status.xlsx" download style="background-color: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-size: 0.9em; font-weight: bold;">Download Excel List</a>
+        <h1>Collection Roadmap</h1>
+        <p>This dashboard tracks the real-time status of specimens in the IFML digitization pipeline. 
+           <br><strong>Status Key:</strong> <span style="color:green; font-weight:bold;">Published</span> (Live on Zenodo) | <span style="color:#005f73; font-weight:bold;">Processed</span> (Ready for Upload) | <span style="color:#666;">Not Scanned</span></p>
+
+        <div class="sheet-wrapper">
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHnqkIBEM6EG7_hSPytdbRyNSOGHtBuDOtCzYmLiD1xltBzIuWrTQYwuQTulapWWj9EOr5gnS3rwLx/pubhtml?gid=0&single=true&widget=true&headers=false"></iframe>
         </div>
-
-        <p>This page tracks the processing status of specimens in the IFML pipeline.</p>
-
-        <table class="status-table">
-            <thead>
-                <tr>
-                    <th>Species</th>
-                    <th>Common Name</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><em>Quercus bicolor</em></td>
-                    <td>Swamp White Oak</td>
-                    <td><span class="badge badge-green">Uploaded</span></td>
-                </tr>
-                <tr>
-                    <td><em>Quercus macrocarpa</em></td>
-                    <td>Bur Oak</td>
-                    <td><span class="badge badge-yellow">Processing</span></td>
-                </tr>
-                <tr>
-                    <td><em>Acer saccharum</em></td>
-                    <td>Sugar Maple</td>
-                    <td><span class="badge badge-grey">Pending Scan</span></td>
-                </tr>
-                 <tr>
-                    <td><em>Juglans nigra</em></td>
-                    <td>Black Walnut</td>
-                    <td><span class="badge badge-grey">Pending Scan</span></td>
-                </tr>
-            </tbody>
-        </table>
 
     </div>
 
