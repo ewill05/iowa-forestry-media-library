@@ -107,7 +107,59 @@
     <div class="footer">
         &copy; 2026 Iowa Forestry Media Library.
     </div>
+<h3 style="text-align: left; color: #2c3e50; margin-top: 40px; border-bottom: 2px solid #eee; padding-bottom: 10px;">Collection Roadmap</h3>
+        
+        <style>
+            .status-table { width: 100%; border-collapse: collapse; margin-bottom: 40px; text-align: left; }
+            .status-table th { background-color: #f8f9fa; padding: 12px; border-bottom: 2px solid #ddd; color: #555; font-size: 0.9em; text-transform: uppercase; }
+            .status-table td { padding: 12px; border-bottom: 1px solid #eee; color: #333; }
+            
+            /* Status Badges */
+            .badge { padding: 5px 10px; border-radius: 12px; font-size: 0.8em; font-weight: bold; }
+            .badge-green { background-color: #d4edda; color: #155724; } /* Live on Zenodo */
+            .badge-yellow { background-color: #fff3cd; color: #856404; } /* Scanned, waiting to upload */
+            .badge-grey { background-color: #e2e3e5; color: #383d41; }   /* Not scanned yet */
+        </style>
 
+        <table class="status-table">
+            <thead>
+                <tr>
+                    <th>Species</th>
+                    <th>Common Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><em>Quercus bicolor</em></td>
+                    <td>Swamp White Oak</td>
+                    <td><span class="badge badge-green">Uploaded</span></td>
+                </tr>
+                
+                <tr>
+                    <td><em>Quercus macrocarpa</em></td>
+                    <td>Bur Oak</td>
+                    <td><span class="badge badge-yellow">Processing</span></td>
+                </tr>
+                
+                <tr>
+                    <td><em>Acer saccharum</em></td>
+                    <td>Sugar Maple</td>
+                    <td><span class="badge badge-grey">Pending Scan</span></td>
+                </tr>
+                <tr>
+                    <td><em>Juglans nigra</em></td>
+                    <td>Black Walnut</td>
+                    <td><span class="badge badge-grey">Pending Scan</span></td>
+                </tr>
+                 <tr>
+                    <td><em>Carya ovata</em></td>
+                    <td>Shagbark Hickory</td>
+                    <td><span class="badge badge-grey">Pending Scan</span></td>
+                </tr>
+            </tbody>
+        </table>
 </body>
 </html>
+
 
